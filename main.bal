@@ -14,7 +14,7 @@ service rabbitmq:Service "Orders" on eventListener {
 
     remote function onError(rabbitmq:AnydataMessage message, rabbitmq:Error rabbitmqError) returns error? {
         do {
-            log:printInfo(message.toString());
+
         } on fail error err {
             // handle error
             return error("unhandled error", err);
